@@ -5,4 +5,6 @@ object pdepcargas {
 	method pagarAPuesto(importe){
 		deuda += importe
 	}
+	
+	method deuda() = deuda
 }

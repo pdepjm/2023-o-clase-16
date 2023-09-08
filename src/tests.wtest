@@ -1,6 +1,20 @@
+import camiones.*
+import puestos.*
+import pdepcargas.*
 
-test "testX" {
+describe "Scanion500"{
+	test "El peso es la capacidad maxima por la densidad"{
+		assert.equals(5000 * 2, scanion5000.peso())
+	}
+	
+	test "La velocidad máxima es 140"{
+		assert.equals(140, scanion5000.velocidadMaxima())
+	}
+}
 
-	assert.that(true)
-
+describe "Rutatlantica"{	
+	test "Cuando pasa un camión por rutatlantica cobra 7000 + adicional de 100 por tonelada"{
+		rutatlantica.dejarPasar(scanion5000)
+		assert.equals(8000,pdepcargas.deuda()) 
+	}
 }
